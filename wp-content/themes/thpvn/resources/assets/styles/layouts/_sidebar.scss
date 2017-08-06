@@ -1,0 +1,128 @@
+/* stylelint-disable */
+
+.sidebar {
+	.widget {
+		margin-bottom: 30px;
+		background: $white;
+		.title-widget {
+			background: $bg-heading;
+			font-size: 2.6rem;
+			font-weight: 400;
+			font-family: 'Anton', sans-serif;
+			color: $white;
+			padding: 26px 20px;
+			margin: 0;
+			text-transform: uppercase;
+		}
+		> ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			li {
+				border-bottom: 1px solid #efefef;
+				a {
+					font-size: 1.9rem;
+					display: block;
+					color: $black;
+					padding: 20px;
+				}
+				&.cat-parent {
+					position: relative;
+					.toggle-parent {
+						position: absolute;
+						font-family: FontAwesome;
+						top: 15px;
+						right: 0;
+						font-size: 2rem;
+						padding: 5px 15px;
+						color: $grey-light;
+						cursor: pointer;
+						z-index: 3;
+						&:before {
+							content: "\f0d7";
+						}
+					}
+				}
+				&.cat-item {
+					>a {
+						position: relative;
+						.text {
+							position: relative;
+							z-index: 2;
+						}
+						&:before {
+							content: '';
+							background: $primary;
+							width: 100%;
+							height: 0;
+							position: absolute;
+							top: 0;
+							left: 0;
+							transition: 0.3s all;
+							z-index: 1;
+						}
+					}
+					&:hover, &.open {
+						>a {
+							color: $white;
+							&:before {
+								height: 100%;
+							}
+						}
+						>.toggle-parent { 
+							color: $white;
+						}
+					}
+					&.open {
+						>.toggle-parent { 
+							&:before {
+								content: "\f0d8";
+							}
+						}
+					}
+				}
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				&.children {
+					display: none;
+					background: #F7F7F7;
+					li {
+						a {
+							font-size: 1.5rem;
+							color: $base !important;
+							&:before {
+								display: none;
+							}
+							&:hover {
+								color: $primary !important;
+							}
+						}
+						&:hover, &.open {
+							>.toggle-parent { 
+								color: $grey-light;
+							}
+						}
+						ul {
+							li {
+								a {
+									padding-left: 30px;
+								}
+							}
+						}
+					}
+				}
+				li {
+					border-bottom: 0;
+					border-top: 1px solid #efefef;
+				}
+			}
+		}
+		>form, > div {
+			padding: 20px;
+		}
+	}
+
+}

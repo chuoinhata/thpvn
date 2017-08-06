@@ -1,0 +1,71 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: 2017-07-31 04:55:54
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.2.16
+WORDPRESS:	4.8
+PHP INFO:	7.1.7 | SAPI: apache2handler
+SERVER:		Apache/2.4.25 (Win64) OpenSSL/1.0.2k PHP/7.1.7 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (512M default) 
+MEMORY STACK: 40MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported 
+TABLES: total:61 | filtered:0 | create:61 
+FILTERED: [] 
+SQL CREATED: 20170731_thpvn_c6432815372f162b7103170731045525_database.sql 
+SQL FILE SIZE: 2.58MB (2710230) 
+SQL FILE TIME: 2017-07-31 04:55:55 
+SQL RUNTIME: 0.93 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  D:/X_XLaragon/www/thpvn 
+ARCHIVE FILE: 20170731_thpvn_c6432815372f162b7103170731045525_archive.zip 
+FILTERS: *OFF* 
+DIRS:
+	not set 
+FILES:
+	not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	182.55MB 
+STATS:	Dirs 4,562 | Files 29,246 
+SQL ADDED: 20170731_thpvn_c6432815372f162b7103170731045525_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 33808
+    [filename] => D:\X_XLaragon\www\thpvn\wp-snapshots\tmp\20170731_thpvn_c6432815372f162b7103170731045525_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 68.07MB 
+ARCHIVE RUNTIME: 178.44 sec. 
+MEMORY STACK: 50MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+Template parsed with new data 
+Complete [D:/X_XLaragon/www/thpvn/wp-snapshots/tmp/20170731_thpvn_c6432815372f162b7103170731045525_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 2.58MB 
+Installer File: 431.85KB 
+Archive File: 68.07MB  

@@ -1,0 +1,111 @@
+/* stylelint-disable */
+
+.footer-top {
+	background: $white;
+	padding: 20px 0;
+	.widget {
+		.title-widget {
+			display: inline-block;
+			margin-right: 20px;
+			font-family: 'Anton', sans-serif;
+			color: #000;
+			font-size: 2.5rem;
+			vertical-align: top;
+			margin-top: 10px;
+		}
+		> div {
+			display: inline-block;
+			width: auto;
+			&.tnp-widget-minimal {
+				width: 100%;
+			}
+		}
+	}
+	.footer-top-right {
+		text-align: right;
+	}
+}
+
+.footer-main {
+	padding: 40px 0 80px;
+	background: url(../images/bg-bottom-block.jpg) repeat 50% 0 transparent;
+	.title-widget {
+		font-family: 'Anton', sans-serif;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 2.2rem;
+		margin: 0 0 15px;
+	}
+	.menu {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		li {
+			padding: 6px 0 10px;
+			border-top: 1px solid $gray;
+			&:first-child {
+				border-top: 0;
+			}
+			a {
+				color: $base;
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+		.sub-menu {
+			display: none;
+		}
+	}
+}
+
+.half-menu {
+	.menu {
+		li {
+			margin-right: 8%;
+			width: 46%;
+			float: left;
+			&:nth-child(2) {
+				border-top: 0;
+			}
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	padding: 15px 0;
+	p{
+		margin-bottom: 0;
+	}
+}
+
+.item-contact {
+	position: relative;
+	padding-left: 6rem;
+	min-height: 4rem;
+	margin-top: 15px;
+	&:first-child {
+		margin-top: 0;
+	}
+	.icon-contact {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 4rem;
+		color: $white;
+	}
+	a {
+		&:hover {
+			color: $white;
+		}
+	}
+	&-phone {
+		a {
+			font-size: 3rem;
+			color: #fff;
+		}
+	}
+}
