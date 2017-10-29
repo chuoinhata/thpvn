@@ -66,7 +66,6 @@ $labels = array_reverse($labels);
 
 <div class="wrap" id="tnp-wrap">
 
-    <?php $help_url = 'https://www.thenewsletterplugin.com/plugins/newsletter'; ?>
     <?php include NEWSLETTER_DIR . '/tnp-header.php'; ?>
 
     <div id="tnp-heading">

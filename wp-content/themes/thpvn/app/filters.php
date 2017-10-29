@@ -70,10 +70,9 @@ add_filter('template_include', function ($template) {
 add_filter('comments_template', 'App\\template_path');
 
 
-/**
- * Add template woocommerce
- */
-// add_action( 'after_setup_theme', 'woocommerce_support' );
-// function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-//}
+add_theme_support( 'woocommerce' );
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 8 );
+

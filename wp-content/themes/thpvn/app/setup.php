@@ -54,7 +54,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'account_navigation' => __('Account Navigation', 'sage')
     ]);
 
     /**
@@ -127,6 +128,10 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name'          => __('Sticky Left', 'sage'),
         'id'            => 'sticky-left'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Account Sidebar', 'sage'),
+        'id'            => 'account-sidebar'
     ] + $config);
 });
 

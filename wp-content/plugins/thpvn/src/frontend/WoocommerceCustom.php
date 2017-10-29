@@ -15,6 +15,14 @@ class WoocommerceCustom{
 		add_filter( 'woocommerce_product_single_add_to_cart_text', array($this, 'woo_custom_cart_button_text' ));
 		add_filter( 'woocommerce_product_add_to_cart_text', array($this, 'woo_archive_custom_cart_button_text' ));
 		add_action( 'woocommerce_after_shop_loop_item', array($this, 'action_woocommerce_after_shop_loop_item'), 100, 0 ); 
+		add_filter( 'loop_shop_per_page', array($this, 'new_loop_shop_per_page'), 20 );
+	}
+
+
+
+	function new_loop_shop_per_page( $cols ) {
+		$cols = 6;
+		return $cols;
 	}
 
 	function woocommerce_header_add_to_cart_fragment( $fragments ) {
@@ -52,7 +60,7 @@ class WoocommerceCustom{
 			return $price;
 		} 
 		else {
-			return '<ins>'.__('Giá liên hệ','sage').'</ins>';
+			return '<ins>'.__('Contact price','thpvn').'</ins>';
 		}
 	}
 
@@ -67,6 +75,6 @@ class WoocommerceCustom{
 	function action_woocommerce_after_shop_loop_item() {
 		global $product;
 
-		echo '<a class="button readmore-product" href="' . esc_url( get_permalink( $product->id ) ) . '">'.__("Chi tiết","sage").'</a>';
+		echo '<a class="button readmore-product" href="' . esc_url( get_permalink( $product->id ) ) . '">'.__("Detail","thpvn").'</a>';
 	}
 }

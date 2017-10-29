@@ -8,15 +8,18 @@ $slick-loader-path: "~slick-carousel/slick/";
 
 // Colors
 $grey: #777;
-$grey-dark: #CDCDCD;
-$grey-darker: #333;
-$grey-light: #9c9b9b;
-$grey-lighter: #EFEFEF;
+$grey-2: #CDCDCD;
+$grey-3: #333;
+$grey-4: #9c9b9b;
+$grey-5: #EFEFEF;
+$grey-6: #fbfbfb;
+$grey-7: #d6d4d4;
 $gray: #434343;
 $red: #F41E1E;
+$red-2: #c31414;
 $black: #000;
-$black-light: #181818;
-$black-lighter: #484848;
+$black-2: #181818;
+$black-3: #484848;
 $white: #fff;
 
 $base: $grey;
@@ -29,3 +32,21 @@ $bg-phone: #43b51f;
 $bg-whatsapp: #65bc54;
 $bg-skype: #00aff0;
 $bg-zalo: #0097c9;
+
+// @include media-breakpoint-up(sm) { ... }     @media (min-width: 576px) { ... }
+// @include media-breakpoint-up(md) { ... }     @media (min-width: 768px) { ... }
+// @include media-breakpoint-up(lg) { ... }     @media (min-width: 992px) { ... }
+// @include media-breakpoint-up(xl) { ... }     @media (min-width: 1200px) { ... }
+//
+// @include media-breakpoint-down(xs) { ... }   @media (max-width: 575px) { ... }
+// @include media-breakpoint-down(sm) { ... }   @media (max-width: 767px) { ... }
+// @include media-breakpoint-down(md) { ... }   @media (max-width: 991px) { ... }
+// @include media-breakpoint-down(lg) { ... }   @media (max-width: 1199px) { ... }
+//
+// @include media-breakpoint-only(xs) { ... }   @media (max-width: 575px) { ... }
+// @include media-breakpoint-only(sm) { ... }   @media (min-width: 576px) and (max-width: 767px) { ... }
+// @include media-breakpoint-only(md) { ... }   @media (min-width: 768px) and (max-width: 991px) { ... }
+// @include media-breakpoint-only(lg) { ... }   @media (min-width: 992px) and (max-width: 1199px) { ... }
+// @include media-breakpoint-only(xl) { ... }   @media (min-width: 1200px) { ... }
+//
+// @include media-breakpoint-between(md, lg) { ... }   @media (min-width: 768px) and (max-width: 991px) { ... }

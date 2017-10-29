@@ -117,7 +117,6 @@ $controls->data['search_page']++;
 
 <div class="wrap" id="tnp-wrap">
 
-    <?php $help_url = 'https://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module'; ?>
     <?php include NEWSLETTER_DIR . '/tnp-header.php'; ?>
 
     <div id="tnp-heading">
@@ -225,6 +224,7 @@ $controls->data['search_page']++;
     <small>
         <?php
         for ($i=1; $i<=NEWSLETTER_LIST_MAX; $i++) {
+            if (!isset($lists['' . $i])) continue;
             $l = 'list_' . $i;
             if ($s->$l == 1) echo esc_html($lists['' . $i]) . '<br />';
         }

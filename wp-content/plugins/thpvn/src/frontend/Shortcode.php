@@ -20,7 +20,22 @@ class Shortcode{
 		add_shortcode( 'thp_whatsapp', array($this, 'whatsappData') );
 		add_shortcode( 'thp_phone', array($this, 'phoneData') );
 		add_shortcode( 'thp_email', array($this, 'emailData') );
+		add_shortcode('CF7_get_product_name', array($this, 'cf7_get_product_name'));
+		add_shortcode('CF7_get_product_link', array($this, 'cf7_get_product_link'));
 	}
+
+
+	function cf7_get_product_name(){
+		$result = get_the_title();
+		return $result;
+	}
+
+	function cf7_get_product_link() {
+		$result = get_the_permalink();
+		return $result;
+	}
+
+
 
 	// [thp_social type="facebook" link="facebook.com"]
 	function socialData( $atts ) {
@@ -31,7 +46,7 @@ class Shortcode{
 			), $atts );
 
 		if ($att['type'] == null || $att['link'] == null) {
-			echo 'Nhập sai cấu trúc [thp_social type="facebook" link="facebook.com"]';
+			echo __('Wrong structure [thp_social type="facebook" link="facebook.com"]', 'thpvn');
 		}
 		else {
 			echo '<a href="'. $att['link'] .'" class="thp-social-item" target="_blank"><i class="fa fa-'. $att['type'] .'" aria-hidden="true"></i></a>';
@@ -48,15 +63,15 @@ class Shortcode{
 			), $atts );
 
 		if ($att['icon'] == null || $att['text'] == null) {
-			echo 'Nhập sai cấu trúc [thp_contact icon="address" text="abc"]';
+			echo __('Wrong structure [thp_contact icon="address" text="abc"]', 'thpvn');
 		}
 		else {
 			echo '<div class="item-contact item-contact-'. $att['icon'] .'">';
 			if ($att['icon'] == 'phone') {
-				echo '<i class="icon-contact fa fa-'. $att['icon'] .'" aria-hidden="true"></i><span class="text-theme">'.__( 'Liên lạc với chúng tôi', 'sage' ).':</span><br><a href="tell:'. $att['text'] .'" target="_blank">'.$att['text'].'</a>';
+				echo '<i class="icon-contact fa fa-'. $att['icon'] .'" aria-hidden="true"></i><span class="text-theme">'.__( 'Contact Us', 'thpvn' ).':</span><br><a href="tell:'. $att['text'] .'" target="_blank">'.$att['text'].'</a>';
 			}
 			else if ($att['icon'] == 'email') {
-				echo '<i class="icon-contact fa fa-envelope-o" aria-hidden="true"></i><span class="text-theme">'.__( 'Email', 'sage' ).':</span> <a href="mailto:'. $att['text'] .'" target="_blank">'.$att['text'].'</a>';
+				echo '<i class="icon-contact fa fa-envelope-o" aria-hidden="true"></i><span class="text-theme">'.__( 'Email', 'thpvn' ).':</span> <a href="mailto:'. $att['text'] .'" target="_blank">'.$att['text'].'</a>';
 			}
 			else if ($att['icon'] == 'address') {
 				echo '<i class="icon-contact fa fa-map-marker" aria-hidden="true"></i>'. $att['text'];
@@ -76,7 +91,8 @@ class Shortcode{
 		$args = array( 
 			'post_type' => 'product',
 			'meta_key' => 'choose_slider',
-			'meta_value' => 1 );
+			'meta_value' => 1,
+			'suppress_filters' => 0);
 
 		$listSlider = get_posts( $args );
 
@@ -87,7 +103,7 @@ class Shortcode{
 					<?php
 					$categoryProduct = get_the_terms($slider->ID, 'product_cat');
 					$_product = wc_get_product( $slider->ID );
-					//var_dump($_product);
+					//var_dump($categoryProduct);
 					?>
 					<article class="item-slider">
 						<a href="<?php echo get_the_permalink($slider->ID)?>">
@@ -111,7 +127,7 @@ class Shortcode{
 			<?php
 		}
 		else {
-			echo __('Không có sản phẩm được chọn làm slider','sage');
+			echo __('Slider null','thpvn');
 		}
 		wp_reset_postdata();
 		return ob_get_clean();
@@ -158,7 +174,7 @@ class Shortcode{
 								$image = "//via.placeholder.com/370x250";
 							}
 							?>
-							<section class="item-category col-sm-6 col-md-4">
+							<section class="item-category col-sm-6 col-md-6 col-lg-4">
 								<a class="item-category-inner" href="<?php echo get_term_link($cat->slug, 'product_cat');?>">
 									<img src="<?php echo $image;?>">
 									<h2 class="name-category"><?php echo $cat->name; ?></h2>
@@ -172,7 +188,7 @@ class Shortcode{
 			<?php
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_category_feature id="32;33"]');
+			_e('Wrong structure [thp_category_feature id="32;33"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}
@@ -227,7 +243,7 @@ class Shortcode{
 			}
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_skype skype="account_skype"]');
+			_e('Wrong structure [thp_skype skype="account_skype"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}
@@ -262,7 +278,7 @@ class Shortcode{
 			}
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_zalo zalo="phone_number"]');
+			_e('Wrong structure [thp_zalo zalo="phone_number"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}
@@ -297,7 +313,7 @@ class Shortcode{
 			}
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_whatsapp whatsapp="phone_number"]');
+			_e('Wrong structure [thp_whatsapp whatsapp="phone_number"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}
@@ -333,7 +349,7 @@ class Shortcode{
 			}
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_phone phone="phone_number"]');
+			_e('Wrong structure [thp_phone phone="phone_number"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}
@@ -369,7 +385,7 @@ class Shortcode{
 			}
 		}
 		else {
-			_e('Vui lòng nhập đúng cấu trúc [thp_email email="phone_number"]');
+			_e('Wrong structure [thp_email email="phone_number"]', 'thpvn');
 		}
 		return ob_get_clean();
 	}

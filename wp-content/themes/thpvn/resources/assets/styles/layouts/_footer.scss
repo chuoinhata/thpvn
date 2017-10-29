@@ -1,4 +1,9 @@
 /* stylelint-disable */
+.footer-wrapper {
+	@include media-breakpoint-down(xs) {
+		padding-bottom: 46px;
+	}
+}
 
 .footer-top {
 	background: $white;
@@ -12,29 +17,63 @@
 			font-size: 2.5rem;
 			vertical-align: top;
 			margin-top: 10px;
+			@include media-breakpoint-down(md) {
+				margin-right: 0;
+			}
 		}
 		> div {
 			display: inline-block;
 			width: auto;
+			@include media-breakpoint-down(md) {
+				display: block;
+			}
 			&.tnp-widget-minimal {
 				width: 100%;
+				@include media-breakpoint-only(lg) {
+					max-width: 230px;
+				}
+				@include media-breakpoint-down(xs) {
+					margin: 10px auto 0;
+				}
 			}
 		}
 	}
 	.footer-top-right {
 		text-align: right;
 	}
+	.footer-top-col {
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+			margin-top: 10px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
 }
 
 .footer-main {
 	padding: 40px 0 80px;
 	background: url(../images/bg-bottom-block.jpg) repeat 50% 0 transparent;
+	@include media-breakpoint-down(md) {
+		padding: 40px 0 20px;
+	}
 	.title-widget {
 		font-family: 'Anton', sans-serif;
 		color: $white;
 		text-transform: uppercase;
 		font-size: 2.2rem;
 		margin: 0 0 15px;
+	}
+	.widget {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 20px;
+		}
+		&:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
 	}
 	.menu {
 		padding: 0;
@@ -47,6 +86,7 @@
 				border-top: 0;
 			}
 			a {
+				display: block;
 				color: $base;
 				&:hover {
 					color: $primary;
@@ -65,8 +105,15 @@
 			margin-right: 8%;
 			width: 46%;
 			float: left;
+			@include media-breakpoint-down(md) {
+				margin-right: 0;
+				width: 100%;
+			}
 			&:nth-child(2) {
 				border-top: 0;
+				@include media-breakpoint-down(md) {
+					border-top: 1px solid $gray;
+				}
 			}
 			&:nth-child(2n) {
 				margin-right: 0;
